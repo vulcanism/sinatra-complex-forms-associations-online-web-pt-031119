@@ -34,7 +34,6 @@ class PetsController < ApplicationController
   patch '/pets/:id' do
     @pet = Pet.find(params[:id])
     @pet.update(name: params[:pet][:name])
-
     if params[:pet][:owner_ids]
       @pet.owner_id=params[:pet][:owner_ids].first
     end
